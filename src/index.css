@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;900&family=Outfit:wght@200;400;600;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-primary: #FF5000; /* Editorial Orange */
+  --color-dark: #050505;
+  --color-neutral-850: #1a1a1a;
+  --color-neutral-800: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased selection:bg-primary selection:text-white;
+  }
+}
+
+@layer components {
+  .editorial-tag {
+    @apply border border-neutral-800 px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold inline-block;
+  }
+
+  .display-title {
+    @apply font-display text-[12rem] leading-[0.8] font-black uppercase tracking-tighter;
+  }
+
+  .vertical-label {
+    @apply [writing-mode:vertical-rl] uppercase text-[10px] tracking-[0.3em] font-bold opacity-40;
+  }
+
+  .editorial-border {
+    @apply border-neutral-800/60;
+  }
+}
